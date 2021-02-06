@@ -7,7 +7,7 @@ public class zoho-recruitment-2020 {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		nt value = 5;
+		int value = 5;
 		System.out.print("Enter a value");
 		 value = sc.nextInt();
 		for(int i = 0; i < value; i++)
