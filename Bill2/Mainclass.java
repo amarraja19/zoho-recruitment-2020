@@ -11,7 +11,7 @@ public class Mainclass {
 	static ArrayList<Bill_con> billlist= new ArrayList<Bill_con>();
 	static int i=0,j=0,ci=0,ID = 1001,bill_id = 100,bi=0;
 	static int op;
-	static boolean k=true;
+	static boolean k1=true, k=true;
 	private static void iniz()
 	{
 		System.out.println("initializing Billing model");
@@ -84,6 +84,10 @@ public class Mainclass {
 		customerlist.add(ci,customer);
 		ci++;
 		ID++;
+		customer = new Customer(ID,"amar","8940081359");
+		customerlist.add(ci,customer);
+		ci++;
+		ID++;
 	}
 	private static void status()
 	{
@@ -96,12 +100,14 @@ public class Mainclass {
 			System.out.println(list.get(j).getModel_id()+" | "+list.get(j).getCount()+" | "+list.get(j).getRate());
 		}
 	}
-	private static void newcust(String name, String pho)
+	private static int newcust(String name, String pho)
 	{
+		
 		Customer customer = new Customer(ID,name,pho);
 		customerlist.add(ci,customer);
 		ci++;
 		ID++;
+		return ID;
 		
 	}
 	private static void newbill()
@@ -118,23 +124,24 @@ public class Mainclass {
 		
 		for(j=0;j<ci;j++)
 		{
-			if( (name ==customerlist.get(j).getName()) && (pho==customerlist.get(j).getPho()) )
+			if( (name.equals(customerlist.get(j).getName())) && (pho.equals(customerlist.get(j).getPho()) ))
 			{
 				c_id=customerlist.get(j).getID();
 				break;
 			}
+			else
 			{
 				t=1;
 			}			
 		}
 		if(t==1)
 		{
-			newcust(name,pho);
+			c_id=newcust(name,pho);
 		}
-		k=true;
 		
 		
-		while(k)
+		
+		while(k1)
 		{
 			System.out.println("Enter Coustmer Model ID");
 			mid = sc.next();
@@ -157,14 +164,15 @@ public class Mainclass {
 			}
 			System.out.println("Enter Number of product ");
 			pc=sc.nextInt();
-			/*if(pc >count)
+			if(pc >count)
 			{
 				System.out.println("not available, Please tryagin Thank you ");
 				iniz();
-			}*/
+			}
+			//list.set(j, null).setCount(count - pc);
 			double tax = pc*rate*0.05;
 			p = pc*(rate + tax);
-			System.out.print(mid+" "+c_id+ " "+bill_id+" "+pc+ " "+rate+" "+tax+" "+p);
+			
 			Bill_con bill = new Bill_con(mid,c_id,bill_id,pc, rate, tax, p);
 			billlist.add(bi,bill);
 			bi++;
@@ -173,16 +181,16 @@ public class Mainclass {
 			t2=sc.nextInt();
 			if(t2==1)
 			{
-				k=true;
+				k1=true;
 			}
 			else if(t2==2)
 			{
 				billprint(c_id,bill_id,name,pho); 
-				k=false;
+				k1=false;
 			}
 			else
 			{
-				k=false;
+				k1=false;
 			}
 			
 			
@@ -193,20 +201,21 @@ public class Mainclass {
 	}
 	public static void billprint(int C_id,int bid, String name, String pho)
 	{
-		double total;
+		double total=0;
 		System.out.println();
         System.out.println();
         System.out.println("-----------------------------------------");
-        System.out.println("Customer ID"+C_id+"\nCustomer Name"+name+"   Phone Number"+pho+"\nbill Id"+bid );
+        System.out.println("Customer ID: "+C_id+"\nCustomer Name: "+name+"    Phone Number: "+pho+"\nbill Id: "+bid );
         System.out.println("   Model_id  |count|Rate|tax| price" );
 		for(j=0;j<bi;j++)
 		{
 			if(bid==billlist.get(j).getBill_id())
 			{
 				System.out.println(billlist.get(j).getModel_id()+"|"+billlist.get(j).getCount()+"|"+billlist.get(j).getRate()+"|"+billlist.get(j).getTax()+"|"+billlist.get(j).getPrice());
+				total = total +billlist.get(j).getPrice();
 			}
 		}
-		
+		System.out.println("total Amount:"+total);
 	}
 
 	public static void main(String[] args) {
@@ -223,6 +232,7 @@ public class Mainclass {
 			{
 			case 1:
 				newbill();
+				k1=true;
 				break;
 			case 2:
 				status();
