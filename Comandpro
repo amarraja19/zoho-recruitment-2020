@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Comandpro 
 {
 	private static void addcom(Stack com, String k1)
@@ -7,9 +6,9 @@ public class Comandpro
 		com.push(new String(k1));
 		System.out.println("stack: " + com);  
 	}	
-	public static Stack<String> com = new Stack<>();
+	public static Stack<String> com = new Stack<>();	
 	public static void main(String[] args) 
-  {
+  	{
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		String k;
@@ -31,9 +30,7 @@ public class Comandpro
 				com.pop();
 				System.out.println(" Directly" + com);
 			}
-		}while(!temp[0].equals("end"));
-		
-
+		}
+		while(!temp[0].equals("end"));	
 	}
-
 }
