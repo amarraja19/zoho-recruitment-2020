@@ -26,7 +26,7 @@ public class Temp extends HttpServlet {
 	     // optional default is GET
 	     con.setRequestMethod("GET");
 	     //add request header
-	     con.setRequestProperty("Authorization", "Zoho-oauthtoken 1000.453357822691f1a0f7a9a55360037b59.bc1bf79d80690dc45b751a86fde3d002");
+	     con.setRequestProperty("Authorization", "Zoho-oauthtoken 1000.548f0acde797ce26091be11f076fe04d.70acbad40c5a4e46936c7f07989c0292");
 	     con.setRequestProperty("Content-Type"," multipart/form-data");
 	     int responseCode = con.getResponseCode();
 	     System.out.println("\nSending 'GET' request to URL : " + url);
@@ -43,7 +43,7 @@ public class Temp extends HttpServlet {
 	     //print in String
 	 	 PrintWriter out = res.getWriter();
 	     out.println(response.toString());
-		//URL url = new URL(ìhttps://invoice.zoho.in/api/v3/itemsî); 
+		//URL url = new URL(‚Äúhttps://invoice.zoho.in/api/v3/items‚Äù); 
 		
 	}
 	
