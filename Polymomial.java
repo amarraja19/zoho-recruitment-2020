@@ -1,3 +1,5 @@
+package Polynomial_Addition;
+
 public class Polymomial {
 	static int[] multiply(int A[], int B[],int m, int n)
 	{
@@ -37,8 +39,8 @@ public class Polymomial {
 	public static void main(String[] args) 
 	{ 
 
-		int A[] = {5, 0, 10, 6}; 
-		int B[] = {1, 2, 4}; 
+		int A[] = {5, 4, 3, 6}; 
+		int B[] = {3, 2, 4}; 
 		int m = A.length; 
 		int n = B.length; 
 
