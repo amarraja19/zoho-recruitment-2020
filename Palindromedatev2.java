@@ -70,7 +70,7 @@ public class Palindromedatev2 {
 			String cm = String.valueOf(T_DM);
 			cm =rev(cm);
 			int te = Integer.parseInt(cm);
-			if(Y<te)
+			if(Y<te||M>9)
 			{
 				Y = Y+1;
 			}
