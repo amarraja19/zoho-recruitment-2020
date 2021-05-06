@@ -2,7 +2,7 @@ package Rest_API;
 
 import java.util.Scanner;
 
-public class Polymomial 
+public class Palindromedate 
 {
 	static boolean checkdate(int d, int m, int y)
 	{
@@ -48,48 +48,48 @@ public class Polymomial
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
-		int D,M,Y,YT = 0,t1=0;
+		int D,M,Y,YT = 0;
 		
 		
 		System.out.println("Enter Date with DD/MM/YYYY formate");
 		System.out.print("Enter Date (DD):");
 		D=sc.nextInt();
 		
-		System.out.print("Enter Month (MM):");
+		System.out.println("Enter Month (MM):");
 		M=sc.nextInt();
 		
-		System.out.print("Enter Year (YYYY):");
+		System.out.println("Enter Year (YYYY):");
 		Y=sc.nextInt();
+		
+		int T_DM = (D+1000) + M;
 		
 		YT = Y+5000;
 		if(Palindromedate.checkdate(D,M,Y))
 		{
+			String cm = String.valueOf(T_DM);
+			cm =rev(cm);
+			int te = Integer.parseInt(cm);
+			if(Y<te)
+			{
+				Y = Y+1;
+			}
+
 			for (int year = Y; year <= YT; year++)
 		    {
 		  
 		        String k = String.valueOf(year);
 		        String re = k;
 		        re = rev(re);
-		        int  day =0, month =0;
-		        //System.out.println(t1);
-		        if(t1==0)
-		        {
-		        	day =D;
-		        	month = M;
-		        	t1++;	
-		        	
-		        }
-		        else 
-		        {
-		        	day = Integer.parseInt(re.substring(0, 2));
-			        month = Integer.parseInt(re.substring(2, 2 + 2));
+		   		     
+		       
+		        int day = Integer.parseInt(re.substring(0, 2));
+			    int month = Integer.parseInt(re.substring(2, 2 + 2));
 			       
-		        }
-		        
-		        
+
 		        if (checkdate(day, month, year))
 		        {
-		            System.out.print(re + k +"\n");
+		        	//System.out.print(checkdate(day, month, year));
+		        	System.out.println(" Date:"+day+"\n month:"+month+"\n year:"+year);
 		            YT=0;
 		        }
 		    }
