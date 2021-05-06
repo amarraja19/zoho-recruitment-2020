@@ -1,8 +1,7 @@
-package Rest_API;
-
 import java.util.Scanner;
 
-public class Palindromedatev2 {
+public class Palindromedatev2
+{
 	static boolean checkdate(int d, int m, int y)
 	{
 	  
@@ -61,6 +60,7 @@ public class Palindromedatev2 {
 		Y=sc.nextInt();
 		int t1 = Y/1000;
 		Y = Y-(t1*1000);
+		//System.out.print("Year:" +Y);
 		
 		int T_DM = (D*10) + M;
 		
@@ -70,7 +70,9 @@ public class Palindromedatev2 {
 			String cm = String.valueOf(T_DM);
 			cm =rev(cm);
 			int te = Integer.parseInt(cm);
-			if(Y<te||M>9)
+			//System.out.print("Year:" +Y+"TE:"+te);
+
+			if(Y>te||M>9)
 			{
 				Y = Y+1;
 			}
@@ -82,17 +84,23 @@ public class Palindromedatev2 {
 		        String re = k;
 		        re = rev(re);
 		   		     
-		       
+		       try {
 		        int day = Integer.parseInt(re.substring(0, 2));
 			    int month = Integer.parseInt(re.substring(2, 3));
-			       
-
-		        if (checkdate(day, month, year))
+			    if (checkdate(day, month, year))
 		        {
 		        	//System.out.print(checkdate(day, month, year));
-		        	System.out.println(" Date:"+day+"\n month:"+month+"\n year:"+year);
+		        	System.out.println("\n Date:"+day+"\n month:"+month+"\n year:"+(year+(t1*1000)));
 		            YT=0;
 		        }
+		       } 
+		       catch (Exception e) 
+		       {
+				 year++;
+		       }
+			       
+
+		       
 		    }
 			
 		}
