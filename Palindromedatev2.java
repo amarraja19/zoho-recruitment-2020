@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Palindromedatev2
-{
+public class Palindromedatev2 {
 	static boolean checkdate(int d, int m, int y)
 	{
 	  
@@ -45,12 +44,14 @@ public class Palindromedatev2
 	}
 	public static void main(String args[])
 	{
+		for(int ii = 0; ii<20; ii++)
+		{
 		Scanner sc = new Scanner(System.in);
 		int D,M,Y,YT = 0;
 		
 		
 		System.out.println("Enter Date with DD/MM/YYYY formate");
-		System.out.print("Enter Date (DD):");
+		System.out.println("Enter Date (DD):");
 		D=sc.nextInt();
 		
 		System.out.println("Enter Month (MM):");
@@ -72,7 +73,7 @@ public class Palindromedatev2
 			int te = Integer.parseInt(cm);
 			//System.out.print("Year:" +Y+"TE:"+te);
 
-			if(Y>te||M>9)
+			if(Y<te||M>8)
 			{
 				Y = Y+1;
 			}
@@ -96,7 +97,7 @@ public class Palindromedatev2
 		       } 
 		       catch (Exception e) 
 		       {
-				 year++;
+				// year++;
 		       }
 			       
 
@@ -107,6 +108,7 @@ public class Palindromedatev2
 		else
 		{
 			System.out.print("Invalied");
+		}
 		}
 		
 		
