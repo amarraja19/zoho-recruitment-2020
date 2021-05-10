@@ -108,6 +108,7 @@ public class BinaryTree2 {
 	                if(value1.get(m)==value2.get(n))
 	                {
 	                 System.out.println(+value1.get(m));
+			 System.exit(0);
 	                 }
 	            }
 	        }
