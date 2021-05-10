@@ -3,7 +3,7 @@ package Rest_API;
 import java.util.ArrayList;
 
 public class BinaryTree2 {
-	public static int v1,v2 = 7;
+	public static int v1,v2;
 	public int k=0;
 	
 	private  TreeNode root;
