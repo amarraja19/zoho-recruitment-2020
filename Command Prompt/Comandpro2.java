@@ -16,7 +16,7 @@ public class Comandpro2 {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		FileData filedata = new FileData("null","null","null");
+		FileData filedata = new FileData("null","null");
 		File.add(File_num,filedata);
 		Scanner sc = new Scanner(System.in);
 		String k;
@@ -42,19 +42,14 @@ public class Comandpro2 {
 				{
 					//do
 					//{
-						String file_name, file_data =" Java is a High Level, class-based, "
-								+ "object-oriented programming language that is designed to have "
-								+ "as few implementation dependencies as possible.";
+						String file_name;
 						System.out.println("Enter file name");
 						file_name = sc.next();
 						
-						System.out.print(" ");
-						System.out.println("Enter file Data");
-						file_data = sc.nextLine();
+						
 						
 						File_num++;
-						filedata = new FileData(temp[1],file_name,file_data);
-						System.out.println("Enter file Data"+file_data);
+						filedata = new FileData(temp[1],file_name);
 						File.add(File_num,filedata);
 						
 						
@@ -82,8 +77,7 @@ public class Comandpro2 {
 		     for(int j=1;j<=File_num;j++)
 		     {
 		    	 System.out.println("-----------------------------------------");
-		    	 System.out.println("Path:"+File.get(j).getPath()+"\nFile Name:"+File.get(j).getFile_name()+"\n"
-		    	 		+ "File Data:\n"+File.get(j).getFile_data());
+		    	 System.out.println("Path:"+File.get(j).getPath()+"\nFile Name:"+File.get(j).getFile_name());
 		    	 System.out.println("-----------------------------------------");
 		     }
 		     System.out.println("-----------------------------------------");
