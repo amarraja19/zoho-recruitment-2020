@@ -2,7 +2,8 @@ package string_pro;
 
 import java.util.*;
 
-public class Comandpro_v2 {
+public class Comandpro2
+{
 	public static Stack<String> com = new Stack<String>();
 	static ArrayList<FileData> File = new ArrayList<FileData>();
 	static int File_num = 0;
@@ -35,8 +36,7 @@ public class Comandpro_v2 {
 				addcom(com,temp[1]);
 				System.out.println(temp[1]+" Directly changed");
 				System.out.println("DO you need to add file\nThen Enter '1' or Enter '0' to End ");
-				i = sc.nextInt();
-				
+				i = sc.nextInt();				
 				
 				if(i==1)
 				{
@@ -45,20 +45,17 @@ public class Comandpro_v2 {
 						String file_name;
 						System.out.println("Enter file name");
 						file_name = sc.next();
-						
-						
-						
+							
 						File_num++;
 						filedata = new FileData(temp[1],file_name);
 						File.add(File_num,filedata);
-						
-						
+										
 						System.out.println("DO you need to add more file \n Then Enter '2' or Enter '0' to End");
 						i = sc.nextInt();
 						
-					}while(i==2);
-					i=0;
-					
+					}
+					while(i==2);
+					i=0;				
 				}				
 				
 			}
@@ -67,27 +64,24 @@ public class Comandpro_v2 {
 				com.pop();
 				System.out.println(" Directly" + com);
 			}
-		}while(!temp[0].equals("end"));
+		}
+		while(!temp[0].equals("end"));
 		
 		
 		if(File_num>0)
 		{
 			System.out.println();
-		     System.out.println("-----------------------------------------");
-		     for(int j=1;j<=File_num;j++)
-		     {
-		    	 System.out.println("-----------------------------------------");
-		    	 System.out.println("Path:"+File.get(j).getPath()+"\nFile Name:"+File.get(j).getFile_name());
-		    	 System.out.println("-----------------------------------------");
-		     }
-		     System.out.println("-----------------------------------------");
-		     System.out.println("-----------------------------------------");
-		     System.out.println("                    END                  ");
-			
-		}
-		 
-		
-		
+		    System.out.println("-----------------------------------------");
+		    for(int j=1;j<=File_num;j++)
+		    {
+		    	System.out.println("-----------------------------------------");
+		    	System.out.println("Path:"+File.get(j).getPath()+"\nFile Name:"+File.get(j).getFile_name());
+		    	System.out.println("-----------------------------------------");
+		    }
+		    System.out.println("-----------------------------------------");
+		    System.out.println("-----------------------------------------");
+		    System.out.println("                    END                  ");			
+		}		 		
 
 	}
 
