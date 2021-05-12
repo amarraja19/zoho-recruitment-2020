@@ -40,8 +40,8 @@ public class Comandpro_v2 {
 				
 				if(i==1)
 				{
-					//do
-					//{
+					do
+					{
 						String file_name;
 						System.out.println("Enter file name");
 						file_name = sc.next();
@@ -53,11 +53,11 @@ public class Comandpro_v2 {
 						File.add(File_num,filedata);
 						
 						
-						/*System.out.println("DO you need to add more file \n Then Enter '2' or Enter '0' to End");
+						System.out.println("DO you need to add more file \n Then Enter '2' or Enter '0' to End");
 						i = sc.nextInt();
 						
 					}while(i==2);
-					i=0;*/
+					i=0;
 					
 				}				
 				
