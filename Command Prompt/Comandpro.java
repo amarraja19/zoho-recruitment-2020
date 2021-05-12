@@ -2,7 +2,7 @@ package string_pro;
 
 import java.util.*;
 
-public class Comandpro2 {
+public class Comandpro {
 	public static Stack<String> com = new Stack<String>();
 	static ArrayList<FileData> File = new ArrayList<FileData>();
 	static int File_num = 0;
