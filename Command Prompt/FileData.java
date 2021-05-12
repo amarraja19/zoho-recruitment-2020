@@ -2,15 +2,12 @@ package string_pro;
 
 public class FileData 
 {
-	private String path, file_name, file_data;
+	private String path, file_name;
 	
-	
-
 	FileData(String path, String file_name)
 	{	
 		this.path = path;
-		this.file_name = file_name;
-		
+		this.file_name = file_name;	
 	}
 	
 	public String getPath() 
